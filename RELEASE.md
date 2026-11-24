@@ -7,8 +7,15 @@ publicarlos en GitHub.
 
 1. Ir a `https://github.com/liquidsnk86/odiseo/releases` → **Draft a new release**.
 2. Tag: `v1.2.0`. Título sugerido: `Odiseo 1.2.0`.
-3. Descripción: las notas de la sección `[1.2.0]` de `CHANGELOG.md` (también
-   están en el campo `notes` de `v1.2.0/latest.json`).
+3. Descripción (el cuerpo debe identificar la app y la versión):
+
+   ```
+   Odiseo 1.2.0
+
+   <pegar las notas de la sección [1.2.0] de CHANGELOG.md>
+   ```
+
+   Ese mismo texto está en el campo `notes` de `v1.2.0/latest.json`.
 4. Subir como assets los tres archivos de `v1.2.0/`:
    - `Odiseo_1.2.0_x64-setup.exe`
    - `Odiseo_1.2.0_x64-setup.exe.sig`
