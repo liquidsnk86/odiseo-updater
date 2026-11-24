@@ -1,0 +1,11 @@
+{
+  "version": "1.2.0",
+  "notes": "### Agregado\n\n- **Tres planes con link propio de Mercado Pago**: Base $45.000/mes, Pro\n  $70.000/mes y Max $140.000/mes. Precedencia de checkout: variables por plan en\n  `.env`, columna `plans.checkout_url` y, como fallback histórico, la URL de\n  `pro`. Los links se cargan con `supabase/odiseo_plans_checkout_url.sql`.\n- **Pricing con Swiper**: carrusel de planes con navegación propia en vez de\n  `scroll-snap`, con beneficios y límites diferenciados por plan.\n- **Webhook de MP idempotente**: `public.mp_webhook_events` para auditoría y\n  reintentos; el webhook reutiliza `upsert_odiseo_subscription_from_mp` y deja\n  la fuente de verdad en `public.subscriptions`.\n- **Métricas automáticas**: envío en segundo plano cada 15 minutos con cola\n  persistente y avisos en el diagnóstico local; se quitaron los botones\n  manuales.\n\n### Cambiado\n\n- El trial gratuito pasó a **7 días** y lo controla Odiseo (`start_odiseo_trial`),\n  no Mercado Pago. Los planes de MP van sin período de prueba gratis.\n- El diálogo de suscripción ofrece los tres planes más “Probar 7 días gratis”;\n  el hover de las opciones ya no desplaza el contenido (`translateY`), solo\n  cambia borde y opacidad.\n- Configuración de Supabase acepta alias de clave anon/public\n  (`SUPABASE_ANNON_KEY`, `SUPABASE_PUBLISHABLE_KEY`, etc.).\n- Sidebar, calendario y tour volvieron al diseño previo al rediseño.\n\n### Notas\n\n- Para publicar: tag `v1.2.0` con el instalador NSIS, su `.sig` y\n  `release/latest.json` como assets. El endpoint del updater apunta a\n  `liquidsnk86/odiseo`.",
+  "pub_date": "2026-11-24T05:02:51.095Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUamlxdTZMTlhPaTQ3Y1FXSGpUa3B4Mk1HbUFOQkdJU1IzbHR5QUJWcERKOXQxVnpEMmVqWHZtWTVGamMvOGtSRmNuSnVkb21qdjU2VWNPMjBpYUFBMzd4UWpUVkswRFFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NDk2NTcxCWZpbGU6T2Rpc2VvXzEuMi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjoxLjIuMApJSnVPaTQwSmdocmxlNlB2SGVmbkRodWtFZmd4Z2crMzcyL3hrQ0ZvMVdNWkZpSVYvNll4S2RoakNlUjI4ODRiZHpsblpPRXBXZzZhbXYzQjU1NUNEZz09Cg==",
+      "url": "https://github.com/liquidsnk86/odiseo/releases/download/v1.2.0/Odiseo_1.2.0_x64-setup.exe"
+    }
+  }
+}
