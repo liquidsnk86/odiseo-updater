@@ -1,36 +1,43 @@
-# odiseo-updater
+# Odiseo
 
-Staging local de los artifacts que se publican en **GitHub Releases** para el
-updater firmado de Odiseo (Tauri v2). Acá no hay código: solo los archivos que
-se suben al release y las instrucciones de publicación.
+Odiseo es una aplicación de escritorio para Windows que combina un asistente de
+chat con un agente capaz de operar la computadora y trabajar con Iurix. El
+orquestador y los datos viven en la propia máquina: el modelo propone acciones
+y Odiseo decide si y cómo ejecutarlas.
 
-## Versión actual: 1.2.0
+## Qué hace
 
-```
-v1.2.0/
-├── Odiseo_1.2.0_x64-setup.exe      # instalador NSIS (7,7 MB)
-├── Odiseo_1.2.0_x64-setup.exe.sig  # firma minisign del instalador
-└── latest.json                     # manifiesto que consume el updater
-```
+- **Asistente por chat**: pedís una tarea en lenguaje natural, Odiseo la arma en
+  pasos, ejecuta herramientas reales y te cuenta el resultado.
+- **Operación del equipo**: navega con Playwright, lee y escribe archivos dentro
+  de su workspace, ejecuta PowerShell cuando se lo pedís y consulta el estado
+  del sistema. Las acciones sensibles se muestran antes de ejecutarse.
+- **Iurix**: busca expedientes por número, carátula o materia; descarga adjuntos
+  y novedades; consulta catálogos y prepara el alta de causas. La firma final se
+  completa en la web oficial de Iurix.
+- **Causas y documentos**: carga asistida de causas, planilla, reportes y
+  exportación a PDF.
+- **Calendario y avisos**: vista mensual con navegación propia y notificaciones
+  de Outlook mientras Iurix esté conectado.
+- **Fallos y consultas**: selector de fallos 100 / 500 / 1000 y consultas de
+  BCRA con caché local.
+- **Licencias y actualizaciones**: prueba gratuita de 7 días, planes mensuales
+  y actualizaciones firmadas que se verifican antes de instalarse.
 
-## Endpoint configurado en la app
+## Aptitudes
 
-`plugins.updater.endpoints` de `src-tauri/tauri.conf.json`:
+- **Local**: historial, configuración y caché en SQLite, sin depender de la nube
+  para trabajar.
+- **Con sandbox**: el agente solo puede escribir dentro de su workspace.
+- **Con permisos visibles**: siempre se ve qué puede hacer y qué requiere
+  confirmación.
+- **Sin conexión**: los datos ya sincronizados siguen disponibles si Iurix no
+  responde.
+- **Diagnosticable**: el panel de diagnóstico permite copiar los errores para
+  soporte; no los envía por su cuenta.
 
-```
-https://github.com/liquidsnk86/odiseo/releases/latest/download/latest.json
-```
+## Versiones
 
-La app compara esa versión con la propia y, antes de instalar, verifica la
-firma con la clave pública embebida en `plugins.updater.pubkey`.
-
-## Reglas
-
-- `latest.json` y `.sig` deben corresponder **exactamente** al `.exe` que se
-  sube. Si se recompila el instalador, hay que volver a firmar y regenerar el
-  JSON.
-- No renombrar los archivos: la URL del manifiesto apunta a
-  `Odiseo_1.2.0_x64-setup.exe`.
-- La clave privada `.tauri-keys/odiseo.key` queda solo en la máquina de
-  desarrollo. **Nunca** se sube al repo ni al release.
-- Para publicar, seguí [`RELEASE.md`](RELEASE.md).
+Cada release incluye su carpeta con el instalador y el manifiesto de
+actualización, por ejemplo `v1.2.0/`. También podés actualizar desde
+**Configuración → Acerca de → Buscar actualizaciones** dentro de la app.
