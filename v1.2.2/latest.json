@@ -1,10 +1,10 @@
 {
   "version": "1.2.2",
   "notes": "Odiseo 1.2.2\n\n### Agregado\n\n- **IOL Mendoza**: adaptador Rust y sidecar de Playwright para consultar el buscador público de expedientes desde Opciones, con `filter`, `tipoBusqueda` y paginación.\n- **Login de IOL con Keycloak**: opcional para causas privadas; la sesión se guarda en SQLite, se renueva sola y ante un 401 con token vencido se limpia y se reintenta en modo público.\n- **Avisos de servicios no conectados**: toasts fijos y cerrables también para IOL y Iurix, sin búsquedas automáticas cuando la sesión está vencida.\n- **Cards de integraciones**: Google, **Iurix · San Luis** e **IOL · Mendoza** muestran logo, estado de conexión y jurisdicción en Opciones → Integraciones.\n\n### Cambiado\n\n- **Topes de expedientes por plan**: Base pasa a 250 y Pro a 500 por sincronización (Free 10, Max sin límite). Los límites de fallos no cambian y la RPC de Supabase también devuelve el nuevo valor.\n- **Una sola métrica diaria**: los usos se acumulan en una fila de SQLite por día local y se envían en un único evento `daily_usage` al cerrar el día. Se eliminaron el `metrics.jsonl`, el envío por evento y el script manual `metrics:send`; sin días pendientes no hay llamadas de red.",
-  "pub_date": "2026-11-28T20:07:42.152Z",
+  "pub_date": "2026-11-28T20:13:39.538Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUamlxdTZMTlhPaTBweTlpVk1oODF5S0xzbFVNRDJhMVhsYUhvMW9UdjA3YjJxdHYwUktKOHRZbExmS3gzekxUZjhEalpweFpPdkNBVkkxVXVuS0RPRzA3NDFyTXdOc0FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODk2NDYyCWZpbGU6T2Rpc2VvXzEuMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjoxLjIuMgpabURpTUsvVGRHZEltSXJ6TDUxWDlpUGQ4Um13NEo4bGhFSm83ZEtsQ1hQb3I5Z1JaNTBFZWFEMk1RRE5FMkwvVnBheGZBdkpEb0JSYVpOMWxPOXRCdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUamlxdTZMTlhPaXcxL042dHFleFpFSm1mNmY1VXdWY01OOGlwcHNwSEV2dHpnc21PUy8rdkp1NzRaWVBtR0RWdEd4VkROd2kyTFVaT1U1Y3ROOTVaYUpZNlo4VlVUaGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODk2ODE5CWZpbGU6T2Rpc2VvXzEuMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjoxLjIuMgphTkFaMCtNMlZkMUx6dU9DN2RBKzNXemlZaU5MdFFJTEVINjhFNzZ3eGdYMktFSTNvMzJwNjVydjVhZW13bFhTMmordGZpV043dGdDNU10Mm05dU9BQT09Cg==",
       "url": "https://github.com/liquidsnk86/odiseo-updater/releases/download/v1.2.2/Odiseo_1.2.2_x64-setup.exe"
     }
   }
