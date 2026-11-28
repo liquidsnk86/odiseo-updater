@@ -1,0 +1,11 @@
+{
+  "version": "1.2.1",
+  "notes": "Odiseo 1.2.1\n\n### Agregado\n\n- **Resumen con IA al final del chat**: se contraen todos los paneles de Iurix al resumir y el streaming/respuesta se pinta después de los cuadros, con scroll automático y etiqueta propia. Los prompts internos no se guardan ni cambian el título de la conversación.\n- **Novedades determinísticas**: tabla con estado, inicio, materia, tipo, número y organismo; links `iurix-open:` con la clave codificada y avisos de caché/Iurix desconectado.\n- **Tours guiados** en Expedientes, Agente, Opciones y Fallos, con botones “?” y textos de límites/API paga.\n- **Selector de fallos 50 a 3000** con timeouts escalados y explicación de los PDFs para resumir/generar escritos.\n\n### Cambiado\n\n- Claves Gemini `AIza…` y `AQ.` aceptadas en UI y diagnósticos; errores 429/503 con aviso de cambio de modelo o API paga.\n- Saludo del agente con el primer nombre de Google; toasts fijos y cerrables para servicios no conectados.\n- El endpoint de actualizaciones apunta al repo público `liquidsnk86/odiseo-updater`.\n- Rango de Google Calendar en hora de Argentina (`-03:00`) para no perder los eventos de la última noche del mes.\n\n### Corregido\n\n- Un resumen iniciado en un chat no etiqueta mensajes de otra sesión si el usuario cambia de pestaña antes de que termine.\n- Métricas de “Limpiar local” y fechas de Google Calendar (400 Bad Request).",
+  "pub_date": "2026-11-28T17:29:00.463Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUamlxdTZMTlhPaTFhZzFRQVZEK21IcmdXcEg0ZUg2Nlp5Q1FqTTV0bnJWTTBxTzlqU1k3Y2JaVVBDekpjWmFBVUQ4SGYxdDJXVmc3eWRETmJNZ2pEY3RVUVFuNEJMRVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODg2OTQwCWZpbGU6T2Rpc2VvXzEuMi4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjoxLjIuMQppT2tORkdSWTMyNnZSOVdyNGhkVnBRZmJ5KzBvSXpvTVFjeWtiZ3M2S1NKNlpYZHZZWlRaQ1ZNd2Z1a1IwOWh6dU85dHNNMGhDbVI2K2dtaG9aeGpEUT09Cg==",
+      "url": "https://github.com/liquidsnk86/odiseo-updater/releases/download/v1.2.1/Odiseo_1.2.1_x64-setup.exe"
+    }
+  }
+}
